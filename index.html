@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Développeur Landing Pages</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --card-bg: #f5f5f7;
+            --text: #1d1d1f;
+            --accent: #0071e3;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        h1 { font-size: 48px; font-weight: 800; letter-spacing: -1px; margin-bottom: 10px; }
+        .subtitle { color: #86868b; font-size: 21px; }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .project-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+        }
+        .img-container {
+            height: 200px;
+            background-size: cover;
+            background-position: top center;
+            background-color: #ddd;
+        }
+        .content { padding: 25px; }
+        .tag {
+            font-size: 12px;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: var(--accent);
+            letter-spacing: 1px;
+        }
+        h3 { margin: 10px 0; font-size: 22px; }
+        p { color: #424245; font-size: 15px; margin-bottom: 20px; }
+        .view-link { font-weight: 600; color: var(--accent); }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 32px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Portfolio</h1>
+        <p class="subtitle">Landing Pages Premium & Solutions High-Conversion</p>
+    </header>
+
+    <div class="grid">
+        <a href="https://d-fiscalisation.vercel.app/index.html" class="project-card" target="_blank">
+            <div class="img-container" style="background-image: url('img/defisc.jpg');"></div>
+            <div class="content">
+                <span class="tag">Immobilier / Fintech</span>
+                <h3>Défiscalisation Immobilière</h3>
+                <p>Intégration Google Sheets & Design ultra-pro pour capture de leads.</p>
+                <span class="view-link">Voir le site live →</span>
+            </div>
+        </a>
+
+        <a href="https://auditif-five.vercel.app/" class="project-card" target="_blank">
+            <div class="img-container" style="background-image: url('img/audio.jpg');"></div>
+            <div class="content">
+                <span class="tag">Santé / Médical</span>
+                <h3>Services d'Audioprothèse</h3>
+                <p>Interface épurée et responsive optimisée pour les conversions locales.</p>
+                <span class="view-link">Voir le site live →</span>
+            </div>
+        </a>
+
+
+
+        <a href="https://pac-ld-c.vercel.app/" class="project-card" target="_blank">
+            <div class="img-container" style="background-image: url('img/pac.jpg');"></div>
+            <div class="content">
+                <span class="tag">Green Energy</span>
+                <h3>Pompe à Chaleur (PAC)</h3>
+                <p>Landing page éligibilité 1€ avec formulaire multi-étapes.</p>
+                <span class="view-link">Voir le site live →</span>
+            </div>
+        </a>
+
+        <a href="https://mutulle.vercel.app/" class="project-card" target="_blank">
+            <div class="img-container" style="background-image: url('img/mutuelle.jpg');"></div>
+            <div class="content">
+                <span class="tag">Insurance</span>
+                <h3>Comparateur Mutuelle</h3>
+                <p>Optimisé pour le clic et la comparaison de tarifs santé.</p>
+                <span class="view-link">Voir le site live →</span>
+            </div>
+        </a>
+
+        <a href="https://d-shu.vercel.app/" class="project-card" target="_blank">
+            <div class="img-container" style="background-image: url('img/deshu.jpg');"></div>
+            <div class="content">
+                <span class="tag">Industrial / B2B</span>
+                <h3>Déshumidification Pro</h3>
+                <p>Ciblage entreprises et industries, focus sur la fiche technique.</p>
+                <span class="view-link">Voir le site live →</span>
+            </div>
+        </a>
+
+        <a href="https://traitement-nuisible.vercel.app/" class="project-card" target="_blank">
+            <div class="img-container" style="background-image: url('img/nuisibles.jpg');"></div>
+            <div class="content">
+                <span class="tag">Home Services</span>
+                <h3>Traitement Nuisibles</h3>
+                <p>Urgence et intervention rapide, design orienté appel direct.</p>
+                <span class="view-link">Voir le site live →</span>
+            </div>
+        </a>
+
+        <a href="https://landing-agence-haa9.vercel.app/" class="project-card" target="_blank">
+            <div class="img-container" style="background-image: url('img/service.jpg');"></div>
+            <div class="content">
+                <span class="tag">Digital Agency</span>
+                <h3>Service Création Web</h3>
+                <p>Vente de prestations de développement de landing pages.</p>
+                <span class="view-link">Voir le site live →</span>
+            </div>
+        </a>
+    
+
+
+    </div>
+</div>
+
+</body>
+</html>
