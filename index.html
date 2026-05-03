@@ -21,7 +21,7 @@
             line-height: 1.5;
         }
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 80px 20px;
         }
@@ -34,43 +34,65 @@
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
         }
         .project-card {
             background: var(--card-bg);
-            border-radius: 20px;
+            border-radius: 24px;
             overflow: hidden;
             text-decoration: none;
             color: inherit;
-            transition: all 0.3s ease;
-            border: 1px solid transparent;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
         }
         .project-card:hover {
             transform: translateY(-10px);
             border-color: var(--accent);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.1);
         }
+
+        /* Effet de Scroll au survol */
         .img-container {
-            height: 200px;
-            background-size: cover;
-            background-position: top center;
-            background-color: #ddd;
+            height: 220px;
+            overflow: hidden;
+            background-color: #e5e5e7;
+            position: relative;
         }
-        .content { padding: 25px; }
+        .project-img {
+            width: 100%;
+            height: auto;
+            transition: transform 3s ease-in-out; /* Vitesse du scroll */
+            display: block;
+        }
+        .project-card:hover .project-img {
+            transform: translateY(calc(-100% + 220px)); /* Défile jusqu'au bas de l'image */
+        }
+
+        .content { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
         .tag {
-            font-size: 12px;
+            font-size: 11px;
             text-transform: uppercase;
-            font-weight: 600;
+            font-weight: 700;
             color: var(--accent);
-            letter-spacing: 1px;
+            letter-spacing: 1.2px;
+            margin-bottom: 8px;
         }
-        h3 { margin: 10px 0; font-size: 22px; }
-        p { color: #424245; font-size: 15px; margin-bottom: 20px; }
-        .view-link { font-weight: 600; color: var(--accent); }
+        h3 { margin: 5px 0 10px 0; font-size: 22px; font-weight: 700; }
+        p { color: #424245; font-size: 14px; margin-bottom: 20px; flex-grow: 1; }
+        .view-link { 
+            font-weight: 600; 
+            color: var(--accent); 
+            display: flex; 
+            align-items: center;
+            gap: 5px;
+        }
 
         @media (max-width: 600px) {
             h1 { font-size: 32px; }
+            .img-container { height: 180px; }
         }
     </style>
 </head>
@@ -79,12 +101,14 @@
 <div class="container">
     <header>
         <h1>Portfolio</h1>
-        <p class="subtitle">Landing Pages Premium & Solutions High-Conversion</p>
+        <p class="subtitle">Expertise en Landing Pages & Lead Gen</p>
     </header>
 
     <div class="grid">
         <a href="https://d-fiscalisation.vercel.app/index.html" class="project-card" target="_blank">
-            <div class="img-container" style="background-image: url('img/defisc.jpg');"></div>
+            <div class="img-container">
+                <img src="https://via.placeholder.com/600x1200" class="project-img" alt="Défiscalisation">
+            </div>
             <div class="content">
                 <span class="tag">Immobilier / Fintech</span>
                 <h3>Défiscalisation Immobilière</h3>
@@ -94,7 +118,9 @@
         </a>
 
         <a href="https://auditif-five.vercel.app/" class="project-card" target="_blank">
-            <div class="img-container" style="background-image: url('img/audio.jpg');"></div>
+            <div class="img-container">
+                <img src="https://via.placeholder.com/600x1200" class="project-img" alt="Audioprothèse">
+            </div>
             <div class="content">
                 <span class="tag">Santé / Médical</span>
                 <h3>Services d'Audioprothèse</h3>
@@ -103,10 +129,10 @@
             </div>
         </a>
 
-
-
         <a href="https://pac-ld-c.vercel.app/" class="project-card" target="_blank">
-            <div class="img-container" style="background-image: url('img/pac.jpg');"></div>
+            <div class="img-container">
+                <img src="https://via.placeholder.com/600x1200" class="project-img" alt="PAC">
+            </div>
             <div class="content">
                 <span class="tag">Green Energy</span>
                 <h3>Pompe à Chaleur (PAC)</h3>
@@ -116,7 +142,9 @@
         </a>
 
         <a href="https://mutulle.vercel.app/" class="project-card" target="_blank">
-            <div class="img-container" style="background-image: url('img/mutuelle.jpg');"></div>
+            <div class="img-container">
+                <img src="https://via.placeholder.com/600x1200" class="project-img" alt="Mutuelle">
+            </div>
             <div class="content">
                 <span class="tag">Insurance</span>
                 <h3>Comparateur Mutuelle</h3>
@@ -126,7 +154,9 @@
         </a>
 
         <a href="https://d-shu.vercel.app/" class="project-card" target="_blank">
-            <div class="img-container" style="background-image: url('img/deshu.jpg');"></div>
+            <div class="img-container">
+                <img src="https://via.placeholder.com/600x1200" class="project-img" alt="Déshumidification">
+            </div>
             <div class="content">
                 <span class="tag">Industrial / B2B</span>
                 <h3>Déshumidification Pro</h3>
@@ -136,7 +166,9 @@
         </a>
 
         <a href="https://traitement-nuisible.vercel.app/" class="project-card" target="_blank">
-            <div class="img-container" style="background-image: url('img/nuisibles.jpg');"></div>
+            <div class="img-container">
+                <img src="https://via.placeholder.com/600x1200" class="project-img" alt="Nuisibles">
+            </div>
             <div class="content">
                 <span class="tag">Home Services</span>
                 <h3>Traitement Nuisibles</h3>
@@ -146,7 +178,9 @@
         </a>
 
         <a href="https://landing-agence-haa9.vercel.app/" class="project-card" target="_blank">
-            <div class="img-container" style="background-image: url('img/service.jpg');"></div>
+            <div class="img-container">
+                <img src="audioprothese.png" class="project-img" alt="Agence">
+            </div>
             <div class="content">
                 <span class="tag">Digital Agency</span>
                 <h3>Service Création Web</h3>
@@ -154,9 +188,6 @@
                 <span class="view-link">Voir le site live →</span>
             </div>
         </a>
-    
-
-
     </div>
 </div>
 
